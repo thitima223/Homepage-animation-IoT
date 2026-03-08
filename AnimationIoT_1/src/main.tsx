@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-// import './index.css'  <-- แนะนำให้ใส่ // ข้างหน้า หรือลบออกไปเลยครับ
+import './index.css'
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
