@@ -1,0 +1,251 @@
+
+
+/*///////////////////////////////////// Hero Section ////////////////////////////////////*/
+.hero {
+  /* width: 100%; */
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/IoT_prof/ptb03.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 0 80px;
+}
+
+.heroPhys {
+  /* width: 100%; */
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/IoT_prof/building_22.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 0 80px;
+}
+
+.hero-left {
+  max-width: 600px;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  height: 300px;
+}
+
+.hero-buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 15px 25px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: white;
+  width: 100%;
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 100%;
+}
+
+.hero-right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*////////////////////////////////////// Professors & Staff Sections ////////////////////////////////////*/
+.prof-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.professors-section {
+  background: #2f4a9e;
+  padding: 20px;
+  text-align: center;
+}
+
+.prof-grid {
+  margin: 50px auto 0;
+  width: min(1200px, 100%);
+  padding: 0 20px;
+
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns on desktop */
+  justify-content: center; /* Center items */
+  justify-items: center; /* Center each card within its grid cell */
+}
+
+.staff-section {
+  background: #3d4656;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.prof-container {
+  margin-top: 50px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.prof-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/*////////////////////////////////////// Detail Page ////////////////////////////////////*/
+
+
+.detail-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.research-section {
+  background: #3d4656;
+  padding: 40px;
+  border-radius: 20px;
+  display: grid;
+  gap: 30px;
+}
+
+.paper-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.education-section {
+  background: #2b3f88;
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+}
+/*//////////////////////////////////// Mobile ////////////////////////////////////*/
+@media (max-width: 768px) {
+  .hero,.heroPhys {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .hero h1,.heroPhys h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+  }
+
+  .hero .prof-card,.heroPhys .prof-card {
+    margin-top: 30px;
+    margin-right: 0;
+  }
+  .prof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding: 0 16px;
+  }
+}
+/*//////////////////////////////////// Tablet ////////////////////////////////////*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero,.heroPhys {
+    padding: 0 60px;
+  }
+
+  .hero h1,.heroPhys h1 {
+    font-size: 36px;
+  }
+
+  .hero .prof-card,.heroPhys .prof-card {
+    max-width: 220px;
+  }
+  .prof-grid {
+    margin-top: 50px;
+    display: grid;
+    gap: 25px;
+    /* 4 columns on large screens */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Faculty.css - เพิ่มส่วนนี้ */
+
+/* ปุ่มเปิด Popup Matcher */
+.btn.matcher-trigger {
+  background: linear-gradient(135deg, #1E3A8A 0%, #3b82f6 100%);
+  color: white;
+  border: 2px solid white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.btn.matcher-trigger:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.4);
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.5);
+  }
+}
+
+/* ปรับ hero-buttons ให้เรียงสวย */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  align-items: flex-start;
+}
+
+.hero-buttons .btn {
+  width: 100%;
+  max-width: 350px;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-buttons .btn {
+    max-width: 100%;
+  }
+
+  .btn.matcher-trigger {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+  }
+}

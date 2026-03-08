@@ -1,0 +1,89 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: transparent;
+  position: relative;
+  z-index: 100;
+}
+
+/* ส่วนกล่องแคปซูลสีน้ำเงิน */
+.nav-links-container {
+  background-color: #274187;
+  /* สีน้ำเงินตามภาพ */
+  border-radius: 50px;
+  /* ทำให้ขอบมนเป็นทรงแคปซูล */
+  padding: 8px 30px;
+}
+
+/* จัดเรียงเมนูข้างในกล่อง */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  /* ระยะห่างระหว่างคำ */
+  align-items: center;
+}
+
+/* ตัวหนังสือของลิงก์ */
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: opacity 0.3s ease;
+}
+
+/* เวลาเอาเมาส์ชี้ */
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* เวลาที่กำลังอยู่หน้านั้น */
+.nav-link.active {
+  font-weight: bold;
+}
+
+/* ปุ่มแฮมเบอร์เกอร์ */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ffffff;
+  /* เปลี่ยนเป็นสีขาวเพื่อให้เห็นบนพื้นดำ */
+  cursor: pointer;
+}
+
+/* --- สำหรับหน้าจอมือถือ (ขนาดเล็กกว่า 768px) --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links-container {
+    display: none;
+    /* ซ่อนตอนที่ยังไม่กดปุ่ม */
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #274187;
+    border-radius: 15px;
+    /* ลดความมนลงบนมือถือเพื่อให้เป็นกล่องสี่เหลี่ยมสวยๆ */
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links-container.open {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    /* เรียงจากบนลงล่างบนมือถือ */
+    gap: 15px;
+    align-items: flex-start;
+  }
+}

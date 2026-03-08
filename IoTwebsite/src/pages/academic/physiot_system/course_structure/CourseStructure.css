@@ -1,0 +1,215 @@
+/* CourseStructure.css for PHYIOT (standardized) */
+.course-structure-section {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 0;
+}
+
+/* Header Top */
+.phy-course-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .phy-course-header-top {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .phy-course-main-title {
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .phy-year-selectors {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .phy-year-btn {
+        padding: 10px 25px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+    }
+}
+
+.course-structure-title {
+    font: var(--font-section-th);
+    color: var(--color-secondary);
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.phy-year-selectors {
+    display: flex;
+    gap: 20px;
+}
+
+.phy-year-btn {
+    background-color: #2F57C3;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 40px;
+    font: var(--font-head-eng);
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(47, 87, 195, 0.3);
+    transition: all 0.2s;
+}
+
+.phy-year-btn.active {
+    background-color: #3B66DE;
+    transform: scale(1.05);
+}
+
+.phy-course-mid-title {
+    text-align: center;
+    font: var(--font-section-th);
+    color: var(--color-foreground-2);
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+/* Layout Grid - Standardized ratio: PDF 1, Table 1.5 */
+.course-structure-layout {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.course-structure-left,
+.course-structure-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-structure-left {
+    flex: 1.5;
+    /* Table (Swapped order in TSX) */
+}
+
+.course-structure-right {
+    flex: 1;
+    /* PDF (Swapped order in TSX) */
+}
+
+/* PDF Mockup */
+.phy-pdf-mockup {
+    width: 100%;
+    flex-grow: 1;
+    background-color: white;
+    border: 1px solid #ccc;
+    /* Standard gray border */
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.phy-pdf-content {
+    color: #1a1a1a;
+    font-family: 'Sarabun', 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+.phy-pdf-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.phy-pdf-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.phy-pdf-version {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.phy-pdf-details {
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+.phy-pdf-section {
+    margin-bottom: 30px;
+}
+
+.phy-pdf-section p {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.phy-pdf-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 15px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* Action Buttons - Adjusted to match standard size */
+.phy-course-action-btn {
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    font: var(--font-body);
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+    transition: all 0.2s;
+}
+
+.phy-course-action-btn:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+.phy-course-action-btn.secondary {
+    background-color: var(--color-foreground-2);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .course-structure-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-structure-left {
+        order: 1;
+        width: 100%;
+    }
+
+    .course-structure-right {
+        order: 2;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .phy-pdf-mockup {
+        aspect-ratio: 1 / 1.414;
+        min-height: 450px;
+    }
+}

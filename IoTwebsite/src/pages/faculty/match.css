@@ -1,0 +1,594 @@
+/* ProfessorMatcherPopup.css */
+
+/* Overlay - พื้นหลังโปร่งแสง */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Popup Container */
+.popup-container {
+    background: #2c3440;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgb(215, 215, 215);
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Close Button */
+.popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: #334155;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    z-index: 100;
+}
+
+.popup-close:hover {
+    background: rgb(215, 215, 215);
+    color: #2c3440;
+    transform: rotate(90deg);
+}
+
+/* Header - White Banner Design */
+.popup-header {
+    background: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-header h2 {
+    color: #1e293b !important;
+    font-size: 1.8rem;
+    margin: 0 0 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.popup-header p {
+    color: #64748b !important;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Department Filter */
+.popup-department-filter {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #3a4555;
+    border-radius: 16px;
+    flex-wrap: wrap;
+}
+
+.popup-department-filter>span {
+    color: rgb(215, 215, 215);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.dept-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.dept-btn {
+    padding: 0.4rem 1rem;
+    border: 1px solid rgb(215, 215, 215);
+    background: transparent;
+    color: rgb(215, 215, 215);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.dept-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dept-btn.active {
+    background: #1E3A8A;
+    border-color: #1E3A8A;
+    color: white;
+    font-weight: 500;
+}
+
+/* Content */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Expertise Section */
+.expertise-section {
+    background: #3a4555;
+    padding: 1.25rem;
+    border-radius: 16px;
+}
+
+.expertise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.expertise-header h3 {
+    color: rgb(234, 232, 232);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.clear-btn {
+    background: transparent;
+    border: 1px solid rgb(215, 215, 215);
+    color: rgb(215, 215, 215);
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.clear-btn:hover {
+    background: rgb(215, 215, 215);
+    color: #2c3440;
+}
+
+/* Expertise Grid */
+.expertise-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.expertise-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.expertise-grid::-webkit-scrollbar-track {
+    background: #2c3440;
+    border-radius: 3px;
+}
+
+.expertise-grid::-webkit-scrollbar-thumb {
+    background: #1E3A8A;
+    border-radius: 3px;
+}
+
+.expertise-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    background: #2c3440;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: rgb(215, 215, 215);
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.expertise-chip:hover {
+    border-color: #1E3A8A;
+    background: #3a4555;
+}
+
+.expertise-chip.selected {
+    background: #1E3A8A;
+    border-color: #1E3A8A;
+    color: white;
+    font-weight: 500;
+}
+
+.expertise-chip input {
+    accent-color: #1E3A8A;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.expertise-chip.selected input {
+    accent-color: white;
+}
+
+/* Action Button */
+.popup-action {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-search {
+    background: #1E3A8A;
+    color: white;
+    border: 1px solid white;
+    padding: 0.75rem 2rem;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 200px;
+}
+
+.btn-search:hover:not(:disabled) {
+    background: white;
+    color: #2c3440;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(30, 58, 138, 0.3);
+}
+
+.btn-search:disabled {
+    background: #3a4555;
+    border-color: rgb(150, 150, 150);
+    color: rgb(150, 150, 150);
+    cursor: not-allowed;
+}
+
+/* Results Section */
+.results-section h3 {
+    color: rgb(234, 232, 232);
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    background: #3a4555;
+    border-radius: 16px;
+    color: rgb(215, 215, 215);
+}
+
+.no-results p {
+    margin: 0.5rem 0;
+}
+
+.no-results-hint {
+    color: rgb(180, 180, 180);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .popup-container {
+        padding: 1.5rem 1rem;
+        max-height: 95vh;
+    }
+
+    .popup-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .popup-department-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dept-buttons {
+        justify-content: center;
+    }
+
+    .expertise-grid {
+        max-height: 180px;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popup-close {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-container {
+        padding: 1rem;
+        border-radius: 20px;
+    }
+
+    .expertise-chip {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .btn-search {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* ✅ Professor Card - Search Result Version (Global Styles) */
+.professor-image-container {
+    width: 100%;
+    height: 240px;
+    /* Fixed height to match ProfessorCard */
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+    background: #3a4555;
+}
+
+.professor-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.professor-item:hover img {
+    transform: scale(1.05);
+}
+
+.professor-item {
+    background: #2c3440;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: left;
+    width: 100%;
+    max-width: 220px;
+    min-width: 220px;
+    height: 480px;
+    /* Fixed height for consistency */
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 1rem auto;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.professor-item:hover {
+    border-color: #1E3A8A;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.professor-info {
+    margin-top: auto;
+    padding: 8px 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-height: 0;
+}
+
+.professor-item h3 {
+    margin: 8px 0 4px 0;
+    font-size: 15px;
+    color: rgb(234, 232, 232);
+    font-weight: 600;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 40px;
+}
+
+.professor-position {
+    font-size: 12px !important;
+    color: rgb(180, 180, 180) !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 32px;
+}
+
+.match-score {
+    margin: 6px 0 4px 0;
+    min-height: 35px;
+}
+
+.match-score-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgb(215, 215, 215);
+    margin-bottom: 2px;
+}
+
+.match-score-label strong {
+    color: #60a5fa;
+}
+
+.score-bar {
+    height: 6px;
+    background: #3a4555;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1E3A8A, #3b82f6);
+    transition: width 0.5s ease;
+}
+
+.matched-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 4px 0;
+    min-height: 24px;
+}
+
+.tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #3a4555;
+    color: rgb(215, 215, 215);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tag.matched {
+    background: #1E3A8A;
+    color: white;
+    border-color: #1E3A8A;
+}
+
+.contact-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.email-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #3a4555;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.email-icon:hover {
+    background: #1E3A8A;
+}
+
+.detail-btn {
+    flex: 1;
+    background: #1E3A8A;
+    color: white;
+    border: 1px solid white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.detail-btn:hover {
+    background: white;
+    color: #2c3440;
+}
+
+/* ✅ Results Grid - Layout consistency */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    padding-top: 1rem;
+}
+
+/* ✅ Responsive Overrides */
+@media (max-width: 1024px) {
+    .professor-item {
+        min-width: 210px;
+        max-width: 210px;
+        height: 460px;
+    }
+
+    .professor-image-container {
+        height: 198px;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .professor-item {
+        min-width: 200px;
+        max-width: 200px;
+        height: 440px;
+    }
+
+    .professor-image-container {
+        height: 160px;
+    }
+}

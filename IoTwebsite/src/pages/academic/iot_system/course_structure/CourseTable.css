@@ -1,0 +1,302 @@
+.course-table-container {
+    background-color: var(--color-secondary);
+    border-radius: 20px;
+    padding: 20px 30px 40px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.2);
+    color: white;
+    /* overflow-x: auto; - no longer needed since it swaps out */
+}
+
+/* Year Header Setup */
+.course-header-years {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.year-header {
+    grid-column: span 2;
+    background-color: var(--color-bg);
+    color: var(--color-secondary);
+    text-align: center;
+    padding: 8px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-family: var(--font-head-eng);
+    font-size: 0.9rem;
+}
+
+/* Semester Header Setup */
+.course-header-semesters {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.semester-header {
+    background-color: var(--color-bg);
+    color: var(--color-secondary);
+    text-align: center;
+    padding: 6px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-family: var(--font-section-eng);
+    font-size: 0.75rem;
+}
+
+/* Main Grid Area */
+.course-grid-area {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-auto-rows: minmax(50px, auto);
+    gap: 15px 10px;
+}
+
+/* The SVG line overlay */
+.course-lines-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Individual Course Pills */
+.course-pill {
+    background-color: #ffffff;
+    color: var(--color-secondary);
+    border-radius: 20px;
+    padding: 6px 8px;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s;
+    z-index: 2;
+    cursor: default;
+    height: 100%;
+}
+
+.course-pill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.course-pill-coop {
+    padding: 15px 10px;
+}
+
+/* Plan Boxes Wrappers */
+.plan-box {
+    background-color: var(--color-bg);
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+.plan-box-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 15px 10px;
+    width: 100%;
+    height: 100%;
+    grid-auto-rows: minmax(50px, auto);
+}
+
+.plan-text {
+    text-align: center;
+    color: var(--color-secondary);
+    font-family: var(--font-section-eng);
+    font-size: 1.1rem;
+    font-weight: 500;
+    z-index: 1;
+    line-height: 1.1;
+}
+
+.plan-text span {
+    font-family: var(--font-head-eng);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+/* ============================================================== 
+                          MOBILE LAYOUT 
+============================================================== */
+
+.course-mobile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* Tighter main blocks gap */
+    background-color: #1a2c6d;
+    border-radius: 12px;
+    padding: 6px;
+    /* Aggressively reduced outer box padding */
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.2);
+    position: relative;
+    width: 100%;
+}
+
+.mobile-year-group {
+    display: flex;
+    gap: 6px;
+    /* Reduced gap between year label and semesters block */
+    z-index: 2;
+}
+
+.mobile-year-label {
+    background-color: var(--color-bg);
+    color: var(--color-secondary);
+    min-width: 25px;
+    /* Make it much thinner */
+    width: 25px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-head-eng);
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.mobile-semesters {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    /* Reduced vertical gap between semesters */
+    flex: 1;
+}
+
+.mobile-semester {
+    display: flex;
+    gap: 4px;
+    /* Tiny gap between semester label and subjects grid */
+    flex: 1;
+}
+
+.mobile-sem-label {
+    background-color: var(--color-bg);
+    color: var(--color-secondary);
+    min-width: 22px;
+    /* Make it thinnner to map with Year label visually */
+    width: 22px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-section-eng);
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    /* Smaller gaps between pills steals more width for text */
+    flex: 1;
+    align-content: flex-start;
+}
+
+.mobile-course-pill {
+    background-color: #ffffff;
+    color: var(--color-secondary);
+    border-radius: 8px;
+    /* Tighter corners */
+    padding: 6px 2px;
+    /* Minimum horizontal padding so text spans full width */
+    font-family: var(--font-body);
+    font-size: 0.45rem;
+    /* Shrunk slightly further to guarantee fit */
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+    /* Tighter line height to save vertical pixels */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    width: 100%;
+    word-break: break-word;
+    /* Ensure long words wrap to lines */
+}
+
+/* Mobile specific wrappers for Year 4 */
+.mobile-plan-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.mobile-plan-box {
+    border-radius: 10px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-plan-box-outline {
+    background-color: #ffffff;
+    /* White interior */
+    border: 4px solid var(--color-bg);
+    /* Beige thick border */
+}
+
+.mobile-plan-header {
+    text-align: center;
+    font-family: var(--font-section-eng);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    color: var(--color-secondary);
+}
+
+.mobile-plan-header span {
+    font-family: var(--font-head-eng);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.mobile-plan-pill {
+    padding: 10px 4px;
+    font-size: 0.55rem;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+    /* Bold blue outline for all plan pills */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-plan-pill.course-pill-coop {
+    padding: 18px 4px;
+    /* Maintain larger size for Co-op */
+}
