@@ -16,6 +16,9 @@ Demo Website for Easy function database edit : [Update Database for Admin](https
 
 ![image 1](Preview_web/2.png)
 
+
+
+<!--
 ```js
 # React + TypeScript + Vite
 
@@ -90,3 +93,4 @@ export default defineConfig([
   },
 ])
 ```
+-->
