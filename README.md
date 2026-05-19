@@ -6,12 +6,12 @@ My Demo Website : [IoT KMITL](https://67050066.consolutechcloud.com/)
 Demo Website for Easy function database edit : [Update Database for Admin](https://67050066.consolutechcloud.com/admin)
 
 
-# IoT Website [IoT KMITL](https://67050066.consolutechcloud.com/)
+# [IoT Website](https://67050066.consolutechcloud.com/)
 หน้าเว็บไซต์สำหรับบุคคลทั่วไป นักเรียน นักศึกษา
 
 ![image 1](Preview_web/1.png)
 
-# Admin update Website [Update Database for Admin](https://67050066.consolutechcloud.com/admin)
+# [Update Database Website for Admin](https://67050066.consolutechcloud.com/admin)
 หน้าเว็บไซต์สำหรับแอดมินเพื่ออัพเดต data base ซึ่ง linkกัย sql
 
 ![image 1](Preview_web/2.png)
