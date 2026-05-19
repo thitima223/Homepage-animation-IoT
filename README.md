@@ -12,7 +12,7 @@ Demo Website for Easy function database edit : [Update Database for Admin](https
 ![image 1](Preview_web/1.png)
 
 # [Update Database Website for Admin](https://67050066.consolutechcloud.com/admin)
-หน้าเว็บไซต์สำหรับแอดมินเพื่ออัพเดต data base ซึ่ง linkกัย sql
+หน้าเว็บไซต์สำหรับแอดมินเพื่ออัพเดต data base ซึ่ง link กับ sql
 
 ![image 1](Preview_web/2.png)
 
