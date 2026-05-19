@@ -5,7 +5,6 @@ Course KMITL : Mobile Application and Devalopment
 My Demo Website : [IoT KMITL](https://67050066.consolutechcloud.com/)
 Demo Website for Easy function database edit : [Update Database for Admin](https://67050066.consolutechcloud.com/admin)
 
-
 # [IoT Website](https://67050066.consolutechcloud.com/)
 หน้าเว็บไซต์สำหรับบุคคลทั่วไป นักเรียน นักศึกษา
 
