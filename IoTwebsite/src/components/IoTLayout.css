@@ -1,0 +1,150 @@
+.iot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vh;
+    width: 100%;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 600px;
+}
+
+.iot-nav-btn {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.iot-nav-inner {
+    position: absolute;
+    /* Center the inner container perfectly */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    /* Crucial to prevent edge jitter */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iot-nav-btn.active .iot-nav-inner {
+    /* Scale up the inner container but keep it centered */
+    transform: translate(-50%, -50%) scale(1.1);
+    outline: 3px solid #6c9cf1;
+}
+
+.btn-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Removed inverse scaling so the image expands with the button when clicked */
+/* .iot-nav-btn.active .btn-icon-img { transform: scale(0.909); } */
+
+.display-panel {
+    padding: 10px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    aspect-ratio: 16 / 11;
+    /* Fix the overall ratio of the panel */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.5s ease;
+    display: flex;
+    /* Ensure the inner content fills the panel */
+}
+
+.panel-inner {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.main-view {
+    display: flex;
+    overflow: hidden;
+}
+
+.side-view {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.sub-box {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.display-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+.fade-in {
+    animation: fadeInEffect 0.5s ease-in-out;
+}
+
+@keyframes fadeInEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-panel {
+        aspect-ratio: auto;
+        height: auto;
+    }
+
+    .panel-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .main-view {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+    }
+
+    .side-view {
+        flex-direction: row;
+        height: 120px;
+    }
+
+    .iot-nav-btn {
+        width: 60px;
+        height: 60px;
+    }
+}

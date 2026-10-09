@@ -1,0 +1,118 @@
+.course-structure-section {
+    max-width: 1900px;
+    /* Further increased to ensure Table (1.5) and PDF (1.0) fit perfectly */
+    margin: 80px auto;
+    padding: 0;
+}
+
+.course-structure-title {
+    font: var(--font-section-th);
+    color: var(--color-foreground-2);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.course-structure-layout {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.course-structure-left,
+.course-structure-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Enforce strict 1.5:1 ratio (60% vs 40%) */
+.course-structure-left {
+    flex: 1.5;
+    min-width: 0;
+    /* Prevents content from breaking the ratio */
+}
+
+.course-structure-right {
+    flex: 1;
+    min-width: 0;
+    /* Prevents content from breaking the ratio */
+}
+
+.pdf-mockup {
+    width: 100%;
+    flex-grow: 1;
+    min-height: 600px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pdf-mockup-header {
+    text-align: center;
+    font-family: 'Sarabun', 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.pdf-mockup-body {
+    text-align: center;
+    font-family: 'Sarabun', 'Segoe UI', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.course-button {
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    font: var(--font-body);
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.course-button:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+.course-button.secondary {
+    background-color: var(--color-foreground-2);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .course-structure-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-structure-left {
+        order: 1;
+        width: 100%;
+    }
+
+    .course-structure-right {
+        order: 2;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .pdf-mockup {
+        aspect-ratio: 1 / 1.414;
+        min-height: 450px;
+    }
+}
